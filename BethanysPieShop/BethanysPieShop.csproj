@@ -17,11 +17,14 @@
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.5" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
 	</ItemGroup>
+<<<<<<< HEAD
 
 	<ItemGroup>
 	  <None Update="app.yaml">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
+=======
+>>>>>>> cb99b51353fae2cd768b3ff8e2f99741e1b6c0f0
 
 </Project>
