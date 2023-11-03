@@ -35,8 +35,9 @@ jobs:
 
       - name: Install EF Tool
         run: |
-            dotnet new tool-manifest
-            dotnet tool install dotnet-ef
+            dotnet tool install --global dotnet-ef
+            dotnet tool restore
+            dotnet ef database update
           
       - name: Build with dotnet
         run: dotnet build --configuration Release
