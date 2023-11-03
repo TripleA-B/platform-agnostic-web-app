@@ -31,13 +31,10 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-      #substitute production appsettings entries to appsettings json file
-      - name: App Settings Variable Substitution
-        uses: microsoft/variable-substitution@v1
-        with:
-          files: '${{env.DOTNET_ROOT}}/myapp/appsettings.json'
-        env:
-          SECRET: ${{ secrets.AZURE_DB_CONNECTION_STRING }}
+      - name: Export variables from secret
+        run: |
+          ENV_JSON='${{ secrets.APPSETTINGS_VARIABLES_FOR_TESTS }}'
+          echo "$ENV_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> $GITHUB_ENV
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -65,11 +62,3 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-
-      #substitute production appsettings entries to appsettings json file
-      - name: App Settings Variable Substitution
-        uses: microsoft/variable-substitution@v1
-        with:
-          files: '${{env.DOTNET_ROOT}}/myapp/appsettings.json'
-        env:
-          ConnectionStrings.Default: ${{ secrets.AZURE_DB_CONNECTION_STRING }}
