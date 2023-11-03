@@ -32,11 +32,6 @@ jobs:
           files: '*/appsettings.json'
         env:
           ConnectionStrings.BethanysPieShopDbContextConnection: ${{ secrets.AZURE_DB_CONNECTION_STRING }}
-
-      - name: Install EF Tool
-        run: |
-            dotnet tool install --global dotnet-ef
-            dotnet-ef database update
           
       - name: Build with dotnet
         run: dotnet build --configuration Release
