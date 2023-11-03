@@ -23,15 +23,6 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-          
-      #substitute production appsettings entries to appsettings json file
-      - name: App Settings Variable Substitution
-        uses: microsoft/variable-substitution@v1
-        with:
-          files: '${{env.DOTNET_ROOT}}/friendly-octo-giggle/friendly-octo-giggle/BethanysPieShop/appsettings.json'
-        env:
-          ConnectionStrings.Default: ${{ secrets.AZURE_DB_CONNECTION_STRING }}
-          App.ServerRootAddress: ${{ env.SERVER_ROOT_ADDRESS }}
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -44,6 +35,15 @@ jobs:
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+
+      #substitute production appsettings entries to appsettings json file
+      - name: App Settings Variable Substitution
+        uses: microsoft/variable-substitution@v1
+        with:
+          files: '${{env.DOTNET_ROOT}}/friendly-octo-giggle/friendly-octo-giggle/BethanysPieShop/appsettings.json'
+        env:
+          ConnectionStrings.Default: ${{ secrets.AZURE_DB_CONNECTION_STRING }}
+          App.ServerRootAddress: ${{ env.SERVER_ROOT_ADDRESS }}    
 
   deploy:
     runs-on: ubuntu-latest
