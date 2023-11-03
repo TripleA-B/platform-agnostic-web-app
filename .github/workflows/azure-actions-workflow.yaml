@@ -31,11 +31,6 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-      - name: Export variables from secret
-        run: |
-          ENV_JSON='${{ secrets.APPSETTINGS_VARIABLES_FOR_TESTS }}'
-          echo "$ENV_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> $GITHUB_ENV
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
@@ -62,3 +57,8 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+      - name: Export variables from secret
+        run: |
+          ENV_JSON='${{ secrets.AZURE_DB_CONNECTION_STRING }}'
+          echo "$ENV_JSON" | jq -r 'to_entries[] | "\(.key)=\(.value)"' >> $GITHUB_ENV
