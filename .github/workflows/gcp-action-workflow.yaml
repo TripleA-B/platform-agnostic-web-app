@@ -67,7 +67,7 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v1'
 
       - name: Show file structure
-        run: ls -al
+        run: ls -al ./friendly
           
       #- name: Deploy to App Engine
         
