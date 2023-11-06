@@ -10,10 +10,6 @@ on:
         description: 'Log level'     
         required: true
         default: 'warning'
-        
-defaults:
-  run:
-    working-directory: ./BethanysPieShop
 
 jobs:
   build:
