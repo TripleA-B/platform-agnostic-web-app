@@ -72,7 +72,8 @@ jobs:
       - name: 'Use gcloud CLI'
         run: 'gcloud info'  
           
-      #- name: Deploy to App Engine
+      - name: Deploy to App Engine
+        run: gcloud app deploy ./friendly/app.yaml
         
       #  id: deploy
       #  uses: google-github-actions/deploy-appengine@v1
