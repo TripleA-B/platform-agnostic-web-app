@@ -55,25 +55,22 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .net-app
-          path: friendly
-      
+          path: friendly-octo-giggle
+
+      - name: 'Set up Google Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+        
       - id: 'auth'
         name: Authenticate to Google Cloud
         uses: 'google-github-actions/auth@v1'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-      - name: 'Set up Cloud SDK'
-        uses: 'google-github-actions/setup-gcloud@v1'
-
-     # - name: Show file structure
-     #   run: ls -al ./friendly
-
-     # - name: 'Use gcloud CLI'
-      #  run: 'gcloud info'  
+      - name: Set GCP Project    
+        run: gcloud config set project lofty-proton-403316
           
       - name: Deploy to App Engine
-        run: gcloud app deploy ./friendly/app.yaml
+        run: gcloud app deploy ./friendly-octo-giggle/app.yaml
         
       #  id: deploy
       #  uses: google-github-actions/deploy-appengine@v1
