@@ -1,4 +1,4 @@
-name: GitHub Actions for Azure
+name: GitHub Actions for GCP
 
 env:
   AZURE_WEBAPP_NAME: friendly-octo-giggle   # set this to your application's name
