@@ -18,13 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Show Files Structure
+        run: ls -al
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-
-      - name: Show Files Structure
-        run: ls -al
 
       #substitute production appsettings entries to appsettings json file
       - name: App Settings Variable Substitution
