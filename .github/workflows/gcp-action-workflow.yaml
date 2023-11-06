@@ -10,7 +10,7 @@ on:
         
 defaults:
   run:
-    working-directory: BethanysPieShop
+    working-directory: ./BethanysPieShop
 
 jobs:
   build:
