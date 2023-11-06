@@ -18,14 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Show Files Structure
-        run: ls -al
-
-      #substitute production appsettings entries to appsettings json file
+      # Substitute production appsettings entries to appsettings json file
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
         with:
-          files: '*/appsettings.json'
+          files: './BethanysPieShop/appsettings.json'
         env:
           ConnectionStrings.BethanysPieShopDbContextConnection: ${{ secrets.GCP_DB_CONNECTION_STRING }}
 
