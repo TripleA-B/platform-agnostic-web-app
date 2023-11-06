@@ -68,6 +68,9 @@ jobs:
 
       - name: Show file structure
         run: ls -al ./friendly
+
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'  
           
       #- name: Deploy to App Engine
         
