@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      #substitute production appsettings entries to appsettings json file
+      #Substitute production appsettings entries to appsettings json file
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
         with:
@@ -28,11 +28,11 @@ jobs:
         env:
           ConnectionStrings.BethanysPieShopDbContextConnection: ${{ secrets.GCP_DB_CONNECTION_STRING }}
 
-      - id: 'auth'
-        name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v1'
-        with:
-          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+      #- id: 'auth'
+      #  name: 'Authenticate to Google Cloud'
+      #  uses: 'google-github-actions/auth@v1'
+      #  with:
+      #    credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
           
       - name: Deploy to App Engine
         id: deploy
@@ -41,4 +41,4 @@ jobs:
           deliverables: app.yaml
           version: v1
           project_id: ${{ secrets.GCP_PROJECT }}
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
