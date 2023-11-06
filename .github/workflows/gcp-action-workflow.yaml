@@ -1,8 +1,5 @@
 name: GitHub Actions for GCP
 
-env:
-  DOTNET_VERSION: '6.0.x'                 # set this to the .NET Core version to use
-
 on: 
   workflow_dispatch:
     inputs:
