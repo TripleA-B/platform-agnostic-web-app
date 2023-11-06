@@ -3,3 +3,7 @@
 
   runtime_config:
       operating_system: "ubuntu22"
+      
+  resources:
+    cpu: 1
+    memory_gb: 2
