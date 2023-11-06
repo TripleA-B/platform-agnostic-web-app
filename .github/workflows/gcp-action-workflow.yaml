@@ -8,10 +8,14 @@ on:
         required: true
         default: 'warning'
         
+defaults:
+  run:
+    working-directory: BethanysPieShop
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
 
