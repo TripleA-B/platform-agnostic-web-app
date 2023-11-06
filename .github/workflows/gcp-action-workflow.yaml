@@ -1,9 +1,4 @@
-name: GitHub Actions for Azure
-
-env:
-  AZURE_WEBAPP_NAME: friendly-octo-giggle   # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '6.0.x'                 # set this to the .NET Core version to use
+name: GitHub Actions for GCP
 
 on: 
   workflow_dispatch:
@@ -12,33 +7,30 @@ on:
         description: 'Log level'     
         required: true
         default: 'warning'
-        
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
 
-      #substitute production appsettings entries to appsettings json file
+      # Substitute production appsettings entries to appsettings json file
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
         with:
-          files: '*/appsettings.json'
+          files: './BethanysPieShop/appsettings.json'
         env:
           ConnectionStrings.BethanysPieShopDbContextConnection: ${{ secrets.GCP_DB_CONNECTION_STRING }}
 
       - id: 'auth'
-        name: 'Authenticate to Google Cloud'
+        name: Authenticate to Google Cloud
         uses: 'google-github-actions/auth@v1'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
           
+      - name: 'Set up Google Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
+          
       - name: Deploy to App Engine
-        id: deploy
-        uses: google-github-actions/deploy-appengine@v1
-        with:
-          deliverables: app.yaml
-          version: v1
-          project_id: ${{ secrets.GCP_PROJECT }}
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
+        run: gcloud app deploy ./BethanysPieShop/app.yaml
