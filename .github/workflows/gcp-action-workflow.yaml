@@ -56,6 +56,9 @@ jobs:
         with:
           name: .net-app
 
+      - name: Display structure of downloaded files
+        run: ls -R
+      
       - name: Install gcloud
         run: wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz
       
