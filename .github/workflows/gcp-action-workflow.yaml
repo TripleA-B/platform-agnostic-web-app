@@ -70,10 +70,4 @@ jobs:
         run: gcloud config set project ${{ secrets.GCP_PROJECT }}
           
       - name: Deploy to App Engine
-        run: gcloud app deploy ./friendly-octo-giggle/app.yaml
-        
-      #  id: deploy
-      #  uses: google-github-actions/deploy-appengine@v1
-      #  with:
-      #    deliverables: app.yaml
-      #    #project_id: ${{ secrets.GCP_PROJECT }}
+        run: gcloud app deploy
