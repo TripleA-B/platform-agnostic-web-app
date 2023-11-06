@@ -66,11 +66,11 @@ jobs:
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v1'
 
-      - name: Show file structure
-        run: ls -al ./friendly
+     # - name: Show file structure
+     #   run: ls -al ./friendly
 
-      - name: 'Use gcloud CLI'
-        run: 'gcloud info'  
+     # - name: 'Use gcloud CLI'
+      #  run: 'gcloud info'  
           
       - name: Deploy to App Engine
         run: gcloud app deploy ./friendly/app.yaml
