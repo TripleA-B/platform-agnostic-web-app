@@ -43,8 +43,8 @@ jobs:
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-      - name: Set GCP Project    
-        run: gcloud config set project ${{ secrets.GCP_PROJECT }}
+      #- name: Set GCP Project    
+       # run: gcloud config set project ${{ secrets.GCP_PROJECT }}
 
       - name: dotnet publish
         run: cd BethanysPieShop && dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
