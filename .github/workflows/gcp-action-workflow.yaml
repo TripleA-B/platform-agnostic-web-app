@@ -55,20 +55,31 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .net-app
+          path: friendly
+
+      #- name: Display structure of downloaded files
+      #  run: ls -R
+      
+      - name: Download gcloud
+        run: wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz
+        
+      - name: Extract gcloud  
+        run: tar zxvf google-cloud-sdk.tar.gz
+
+      - name: Install gcloud 
+        run: ./google-cloud-sdk/install.sh --quiet --usage-reporting=false --path-update=true PATH="google-cloud-sdk/bin:${PATH}"
 
       - name: Display structure of downloaded files
-        run: ls -R
+        run: ls -al  
       
-      - name: Install gcloud
-        run: wget https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz
-      
-      - id: 'auth'
-        name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v1'
-        with:
-          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+     # - id: 'auth'
+     #   name: 'Authenticate to Google Cloud'
+     #   uses: 'google-github-actions/auth@v1'
+     #   with:
+      #    credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
           
       #- name: Deploy to App Engine
+        
       #  id: deploy
       #  uses: google-github-actions/deploy-appengine@v1
       #  with:
