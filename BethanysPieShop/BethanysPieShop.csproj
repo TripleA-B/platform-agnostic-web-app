@@ -19,7 +19,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-  		<None Include="app.yaml" CopyToOutputDirectory="PreserveNewest" />
+  		<None Include="app.yaml" CopyToOutputDirectory="Always" />
 	</ItemGroup>
 
 </Project>
