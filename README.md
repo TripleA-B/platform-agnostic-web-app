@@ -1,6 +1,5 @@
-# CSE 550 Project
-## Fall 2023
-This repo contains the code for the CSE 550 Project for Fall 2023.
+# Avoiding Vendor Lock-In
+This repo contains the code and CI/CD for an imaginary shopping application.  The primary objective is to demonstrate avoiding vendor lock-in while using PaaS.  Though similar principles apply to XaaS.
 
 ### A shopping web application to demonstrate
 * Cross-platform development
