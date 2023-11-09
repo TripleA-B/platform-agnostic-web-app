@@ -7,8 +7,12 @@ This repo contains the code for the CSE 550 Project for Fall 2023.
 * Business agility
 * Avoiding cloud service provider lock-in
 
-### Google Cloud Platform Architecture
+### Links
+* Microsoft Azure: https://friendly-octo-giggle.azurewebsites.net/
+* Google Cloud Platform: https://cse-550-project.uc.r.appspot.com/ 
 
+### CI/CD
+![CI/CD](https://github.com/TripleA-B/friendly-octo-giggle/blob/main/CI%20CD.png)
 
 ### Logical Architecture
 ![Logical Architecture](https://github.com/TripleA-B/friendly-octo-giggle/blob/main/Logical%20Architecture.png)
