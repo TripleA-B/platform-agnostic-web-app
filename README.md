@@ -9,6 +9,7 @@ This repo contains the code for the CSE 550 Project for Fall 2023.
 
 ### Logical Architecture
 (https://github.com/TripleA-B/friendly-octo-giggle/blob/main/Logical%20Architecture.png)
+![Logical Architecture](./Logical Architecture.png)
 
 ### Microsoft Azure Physical Architecture
 (https://github.com/TripleA-B/friendly-octo-giggle/blob/main/Azure%20Physical%20Architecture.png)
