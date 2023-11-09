@@ -1,5 +1,5 @@
 # Avoiding Vendor Lock-In
-This repo contains the code and CI/CD for an imaginary shopping application.  The primary objective is to demonstrate avoiding vendor lock-in while using PaaS.  Though similar principles apply to XaaS.
+This repo contains the code and CI/CD for a simple and imaginary shopping application.  The primary objective is to demonstrate avoiding vendor lock-in while using PaaS.  Though similar principles apply to XaaS.
 
 ### A shopping web application to demonstrate
 * Cross-platform development
