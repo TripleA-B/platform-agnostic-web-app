@@ -8,7 +8,8 @@ This repo contains the code for the CSE 550 Project for Fall 2023.
 * Avoiding cloud service provider lock-in
 
 ### Logical Architecture
-(https://github.com/TripleA-B/friendly-octo-giggle/blob/main/Logical%20Architecture.png)
+![Logical Architecture](https://github.com/TripleA-B/friendly-octo-giggle/blob/main/Logical%20Architecture.png)
+
 ![Logical Architecture](./Logical Architecture.png)
 
 ### Microsoft Azure Physical Architecture
