@@ -6,10 +6,6 @@ This repo contains the code and CI/CD for a simple and imaginary shopping applic
 * Business agility
 * Avoiding cloud service provider lock-in
 
-### Links
-* Microsoft Azure: https://friendly-octo-giggle.azurewebsites.net/
-* Google Cloud Platform: https://cse-550-project.uc.r.appspot.com/ 
-
 ### Logical Architecture
 ![Logical Architecture](https://github.com/TripleA-B/friendly-octo-giggle/blob/main/Logical%20Architecture.png)
 
