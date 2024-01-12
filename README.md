@@ -1,5 +1,9 @@
 # Avoiding Vendor Lock-In
-This repo contains the code and CI/CD for a simple and imaginary shopping application.  The primary objective is to demonstrate avoiding vendor lock-in while using PaaS.  Though similar principles apply to XaaS.
+The general objective of this project is to demonstrate a cloud-agnostic, 12-factor web application that is deployed into a cloud environment for business continuity, agility, scalability and cost efficiency.  This flexibility will demonstrate the ability to avoid Cloud Service Provider (CSP) lock-in.
+The primary objective is to demonstrate avoiding vendor lock-in while using PaaS.  Though similar principles apply to XaaS. 
+
+# Detailed Description
+The purpose of this project is to build a modular, cloud-agnostic, 12-factor design web application that focuses on business continuity and agility.  Businesses today strive to avoid Cloud Service Provider (CSP) vendor lock-in. Businesses must be agile and must ensure availability through business continuity best practices. As a result, this application will also be hosted in the Cloud (Azure and GCP for this project).  This modern web application is built using a modern cross-platform programming language, in this case ASP.NET 7 MVC, which can run on any system - Linux based or Windows based.  This application will be modular and consist of two parts – a database back-end and MVC (Model-View-Controller) front-end layer.  The actual contents of this application are less important, and in this case it's just a fictituous shopping application for demonstration purposes, because the aim is to build a web app that can be deployed to and hosted in any CSP (such as Azure, GCP, or AWS) or on any platform (such as Tanzu or Kubernetes) at will to avoid vendor lock in. 
 
 ### A shopping web application to demonstrate
 * Cross-platform development
