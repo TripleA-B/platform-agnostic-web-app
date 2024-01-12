@@ -6,7 +6,7 @@ This repo contains the code and CI/CD for a simple and imaginary shopping applic
 * Business agility
 * Avoiding cloud service provider lock-in
 
-### Logical Architecture
+### Logical Architecture using MVC Pattern
 ![Logical Architecture](https://github.com/TripleA-B/friendly-octo-giggle/blob/main/Logical%20Architecture.png)
 
 ### CI/CD
