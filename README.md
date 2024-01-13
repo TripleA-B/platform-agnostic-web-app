@@ -1,4 +1,4 @@
-# Avoiding Vendor Lock-In
+# Platform-Agnostic Web App
 The general objective of this project is to demonstrate a cloud-agnostic, 12-factor web application that is deployed into a cloud environment for business continuity, agility, scalability and cost efficiency.  This flexibility will demonstrate the ability to avoid Cloud Service Provider (CSP) lock-in.
 The primary objective is to demonstrate avoiding vendor lock-in while using PaaS.  Though similar principles apply to XaaS. 
 
