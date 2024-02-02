@@ -1,4 +1,4 @@
-## Check out this guide along with others at my new website [Road to Cloud](https://www.theroadtocloud.com)!
+## Check out this guide along with others at my website [Road to Cloud](https://www.theroadtocloud.com)!
 
 # Platform-Agnostic Web App
 The general objective of this project is to demonstrate a cloud-agnostic, 12-factor web application that is deployed into a cloud environment for business continuity, agility, scalability and cost efficiency.  This flexibility will demonstrate the ability to avoid Cloud Service Provider (CSP) lock-in.
